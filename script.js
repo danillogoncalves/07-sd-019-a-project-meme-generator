@@ -2,7 +2,10 @@ const inputText = document.querySelector('#text-input');
 const inputImage = document.querySelector('#meme-insert');
 const memeText = document.querySelector('#meme-text');
 const memeImageInContainer = document.querySelector('#meme-image');
-
+const memeContainer = document.querySelector('#meme-image-container');
+const buttonFire = document.querySelector('#fire');
+const buttonWater = document.querySelector('#water');
+const buttonEarth = document.querySelector('#earth');
 
 function printMemeText() {
     memeText.innerHTML = inputText.value;
@@ -14,6 +17,20 @@ function applyImageChoosed() {
     memeImageInContainer.src = URL.createObjectURL(inputImage.files[0])
 }
 
+function applyBorderFire() {
+    memeContainer.style.border = '3px dashed red';
+}
+
+function applyBorderWater() {
+    memeContainer.style.border = '5px double blue';
+}
+
+function applyBorderEarth() {
+    memeContainer.style.border = '6px groove green';
+}
 
 inputImage.addEventListener('change', applyImageChoosed);
 inputText.addEventListener('keyup', printMemeText);
+buttonFire.addEventListener('click', applyBorderFire);
+buttonWater.addEventListener('click', applyBorderWater);
+buttonEarth.addEventListener('click', applyBorderEarth);
