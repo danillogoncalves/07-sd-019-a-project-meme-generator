@@ -1,0 +1,16 @@
+#meme-image-container {
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#meme-text {
+    position: absolute;
+    top: 550px;
+    left: 30px; 
+}
+#meme-image {
+    width: 100%;
+    height: 100%;
+}
