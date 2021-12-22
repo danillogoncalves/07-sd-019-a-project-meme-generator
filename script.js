@@ -9,33 +9,32 @@ const buttonEarth = document.querySelector('#earth');
 const memePreContainer = document.querySelector('#meme-pre-container').children;
 
 function printMemeText() {
-    memeText.innerHTML = inputText.value;
+  memeText.innerHTML = inputText.value;
 }
 
 function applyImageChoosed() {
-    // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded/27165977#27165977
-    // Usando as informações do link acima fiz algumas adaptações para solucionar a aplicação da imagem do input no img.
-    memeImageInContainer.src = URL.createObjectURL(inputImage.files[0])
+  // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded/27165977#27165977
+  // Usando as informações do link acima fiz algumas adaptações para solucionar a aplicação da imagem do input no img.
+  memeImageInContainer.src = URL.createObjectURL(inputImage.files[0]);
 }
 
 function applyBorderFire() {
-    memeContainer.style.border = '3px dashed red';
+  memeContainer.style.border = '3px dashed red';
 }
 
 function applyBorderWater() {
-    memeContainer.style.border = '5px double blue';
+  memeContainer.style.border = '5px double blue';
 }
-
 function applyBorderEarth() {
-    memeContainer.style.border = '6px groove green';
-}
-
-for (let i = 0; i < memePreContainer.length; i += 1) {
-    memePreContainer[i].addEventListener('click', applyMemePre);
+  memeContainer.style.border = '6px groove green';
 }
 
 function applyMemePre(e) {
-    memeImageInContainer.src = e.target.src;
+  memeImageInContainer.src = e.target.src;
+}
+
+for (let i = 0; i < memePreContainer.length; i += 1) {
+  memePreContainer[i].addEventListener('click', applyMemePre);
 }
 
 inputImage.addEventListener('change', applyImageChoosed);
